@@ -20,6 +20,7 @@
 #import "RedPacketUserConfig.h"
 #import "RedpacketOpenConst.h"
 #import "AlipaySDK.h"
+#import "EMKEmoManager.h"
 
 @interface AppDelegate ()
 
@@ -39,6 +40,13 @@
     [[RedPacketUserConfig sharedConfig] configWithAppKey:EaseMobAppKey];
 #endif
     
+#warning EmoKit Add
+    /*
+     AppKey和AppId需要开发者从开发者中心（http://dev.emokit.com/）申请
+     以下设置的AppKey和AppId只用于测试，不可用于发布上线
+     */
+    [EMKEmoManager startAppKey:@"98cd22f6f90141f8f1876dd2f5a27ea5" AppId:@"100001"];
+
     _connectionState = eEMConnectionConnected;
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
